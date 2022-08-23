@@ -1,0 +1,21 @@
+<h2 mat-dialog-title>Comments:</h2>
+
+<mat-dialog-content>
+  
+    <mat-dialog-content>
+        <div *ngFor="let reply of description">
+            <h5 class="text-primary">{{reply.replyBy}}</h5>
+            <p>{{reply.replyMessage}}</p>
+        </div>
+    </mat-dialog-content>
+    <hr>
+    <div >
+        <p class="form-label">Enter a reply</p>
+        <input class="form-control" type="text" name="replyMessage" [(ngModel)]="replyMessage">
+    </div>
+</mat-dialog-content>
+
+<mat-dialog-actions>
+    <button class="mat-raised-button"(click)="close()">Close</button>
+    <button class="mat-raised-button mat-primary"(click)="save()">Save</button>
+</mat-dialog-actions>

@@ -1,0 +1,93 @@
+<section class="h-100 gradient-form" style="background-color: #eee;">
+    <div class="container py-5 h-100">
+      <div class="row d-flex justify-content-center align-items-center h-100">
+        <div class="col-xl-10">
+          <div class="card rounded-3 text-black">
+            <div class="row g-0">
+              <div class="col-lg-6">
+                <div class="card-body p-md-5 mx-md-4">
+  
+                  <div class="text-center">
+                    <img src="https://techmoran.com/wp-content/uploads/2021/02/Twitter.jpg"
+                      style="width: 185px;" alt="logo">
+                    <h4 class="mt-1 mb-5 pb-1">Twitter</h4>
+                  </div>
+  
+                  <form [formGroup]="registerForm" (submit)="onSubmit()">
+                    <p><b>Please fill the details</b></p>
+                    
+                    <div class="form-outline mb-4">
+                        <input type="text" id="fullName" class="form-control" name="fullName"
+                          placeholder="Full Name" formControlName="fullName"/>
+                        <label class="form-label" for="fullName">Full Name</label>
+                    </div>
+                    <div class="form-outline mb-4">
+                        <input type="email" id="email" class="form-control" name="email"
+                          placeholder="Email address" formControlName="email"/>
+                        <label class="form-label" for="email">Username</label>
+                        <div *ngIf="registerForm.controls['email'].invalid && 
+                                  (registerForm.controls['email'].dirty || registerForm.controls['email'].touched)">
+                        <p class="alert-danger">Please enter valid email address</p>
+                        </div>
+                      </div>
+                    <div class="form-outline mb-4">
+                      <input type="date" id="dob" class="form-control" name="dob"
+                        formControlName="dob"/>
+                      <label class="form-label" for="form2Example11">Date of Birth</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                        <label class="form-label" for="gender">Gender</label>
+                        <input class="form-check-input form-control" type="radio" name="gender" id="gender1" value="Male" 
+                          formControlName="gender">
+                        <label class="form-label" for="gender1">Male</label>
+                        <input class="form-check-input form-control" type="radio" name="gender" id="gender2" value="Female"
+                          formControlName="gender">
+                        <label class="form-label" for="gender2">Female</label>
+                        <input class="form-check-input form-control" type="radio" name="gender" id="gender3" value="Others"
+                          formControlName="gender">
+                        <label class="form-label" for="gender3">Others</label>
+                    </div>
+                    <br><br>
+                    <div class="form-outline mb-4">
+                      <input type="password" id="password" class="form-control" 
+                        placeholder="Password" formControlName="password"/>
+                      <label class="form-label" for="password">Password</label>
+                      <div *ngIf="registerForm.controls['password'].invalid && 
+                                  (registerForm.controls['password'].dirty || registerForm.controls['password'].touched)">
+                        <p class="alert-danger">Minimum length is 8</p>
+                      </div>
+                    </div>
+                    <div class="form-outline mb-4">
+                        <input type="password" id="retypePassword" class="form-control" 
+                          placeholder="Retype Password" formControlName="retypePassword"/>
+                        <label class="form-label" for="retypePassword">Retype Password</label>
+                        <div *ngIf="this.registerForm.controls['retypePassword'].hasError('noMatch') && registerForm.controls['retypePassword'].touched">
+                          <p class="alert-danger">Passwords don't match</p>
+                        </div>
+                      </div>
+  
+                    <div class="text-center pt-1 mb-5 pb-1">
+                      <button [disabled]="success" class="btn btn-primary btn-block fa-lg gradient-custom-2 mb-3" type="submit">Register</button>
+                      <p *ngIf="success" class="text-success">Successfully registered!</p>
+                      <button *ngIf="success" class="btn btn-danger btn-block fa-lg mb-3" type="button" (click)="onCancel()">Go to login page</button>
+                      <button *ngIf="!success"  class="btn btn-danger btn-block fa-lg mb-3" type="button" (click)="onCancel()">Cancel</button>
+                    </div>
+                  </form>
+  
+                </div>
+              </div>
+              <div class="col-lg-6 d-flex align-items-center gradient-custom-2">
+                <div class="text-white px-3 py-4 p-md-5 mx-md-4">
+                  <h4 class="mb-4">Welcome to the Twitter App</h4>
+                  <p class="small mb-0">Twitter is a free social networking site where users broadcast short posts known as tweets. These tweets can contain text, videos, photos or links. To access Twitter, users need an internet connection or smart phone to use the app or website, Twitter.com.
+                    It is a microblogging service -- a combination of blogging and instant messaging -- for registered users to post, like and reply to tweets with short messages.
+                    People use Twitter to get the latest updates and promotions from brands; communicate with friends; and follow business leaders, politicians and celebrities. They also use it to stay current on news and events. Twitter was the first source to break the news of the water landing of US Airways Flight 549 in New York City's Hudson River.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>

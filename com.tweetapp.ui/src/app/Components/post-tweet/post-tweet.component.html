@@ -1,0 +1,65 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand" routerLink="/home">
+        <img src="https://techmoran.com/wp-content/uploads/2021/02/Twitter.jpg"
+          style="width: 85px;" alt="logo">
+    </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/home">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/seachUser">Search</a>
+        </li>
+        <li class="nav-item active">
+          <a class="nav-link" routerLink="/post">Post</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/profile">Profile</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link alert-danger" (click)="logOut()">Log Out</a>
+        </li>
+      </ul>
+    </div>
+  </nav>    
+
+  <div class="container">
+    <div class="row">
+       <div class="col-md-12">
+          <div id="content" class="content content-full-width">
+             <!-- begin profile -->
+             <div class="profile">
+                <div class="profile-header">
+                   <!-- BEGIN profile-header-cover -->
+                   <div class="profile-header-cover"></div>
+                   <!-- END profile-header-cover -->
+                   <!-- BEGIN profile-header-content -->
+                   <div class="profile-header-content">
+                      <!-- BEGIN profile-header-img -->
+                      <!-- END profile-header-img -->
+                      <!-- BEGIN profile-header-info -->
+                      <div class="profile-header-info">
+                         <h4 class="m-t-10 m-b-5">{{this.userName}}</h4>
+                         <p class="m-b-10">{{this.email}}</p>
+                      </div>
+                      <!-- END profile-header-info -->
+                   </div>
+                   <!-- END profile-header-content -->
+                </div>
+             </div>
+             <div class="panel profile-info">
+                <form (submit)="postTweet()" [formGroup]="tweetForm">
+                    <textarea name="message" formControlName="message" class="form-control input-lg p-text-area" rows="2" placeholder="Whats in your mind today?"></textarea>
+                    <div *ngIf="showError"><p class="alert alert-danger">Please enter at least 10 chars</p></div>
+                    <button [disabled]="success" type="submit" class="btn btn-info pull-right">Post</button>
+                    <button *ngIf="success" (click)="takeHome()" type="button" class="btn btn-info pull-right btn btn-success">Home</button>
+                </form>
+              </div>
+            </div>
+        </div>
+    </div>
+</div>

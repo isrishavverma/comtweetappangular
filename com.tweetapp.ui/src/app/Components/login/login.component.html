@@ -1,0 +1,99 @@
+<!-- <nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <a class="navbar-brand">
+      <img src="https://techmoran.com/wp-content/uploads/2021/02/Twitter.jpg"
+        style="width: 85px;" alt="logo">
+  </a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <a class="nav-link" routerLink="/view">Home</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" routerLink="/edit">Profile</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" routerLink="/create">Tweets</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" routerLink="/delete">Search User</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" routerLink="/delete">Log Out</a>
+      </li>
+    </ul>
+  </div>
+</nav> -->
+<section class="h-100 gradient-form" style="background-color: #eee;">
+    <div class="container py-5 h-100">
+      <div class="row d-flex justify-content-center align-items-center h-100">
+        <div class="col-xl-10">
+          <div class="card rounded-3 text-black">
+            <div class="row g-0">
+              <div class="col-lg-6">
+                <div class="card-body p-md-5 mx-md-4">
+  
+                  <div class="text-center">
+                    <img src="https://techmoran.com/wp-content/uploads/2021/02/Twitter.jpg"
+                      style="width: 185px;" alt="logo">
+                    <h4 class="mt-1 mb-5 pb-1">Twitter</h4>
+                  </div>
+  
+                  <form [formGroup]="loginForm" (submit)="onSubmit()"> 
+                    <p><b>Please login to your account</b></p>
+  
+                    <div class="form-outline mb-4">
+                      <input type="email" id="email" class="form-control" formControlName="email"
+                        placeholder="Email address" required/>
+                      <label class="form-label" for="form2Example11">Username</label>
+                      <div *ngIf="loginForm.controls['email'].invalid && 
+                                  (loginForm.controls['email'].dirty || loginForm.controls['email'].touched)">
+                        <p class="alert-danger">Please enter valid email address</p>
+                      </div>
+                    </div>
+  
+                    <div class="form-outline mb-4">
+                      <input type="password" id="password" class="form-control" formControlName="password"
+                        placeholder="Password"/>
+                      <label class="form-label" for="form2Example22">Password</label>
+                      <div *ngIf="loginForm.controls['password'].invalid && 
+                                  (loginForm.controls['password'].dirty || loginForm.controls['password'].touched)">
+                        <p class="alert-danger">Minimum length is 8</p>
+                      </div>
+                    </div>
+  
+                    <div class="text-center pt-1 mb-5 pb-1">
+                      <button class="btn btn-primary btn-block fa-lg gradient-custom-2 mb-3" 
+                        type="submit">
+                        Log in
+                      </button>
+                      <a class="text-muted" routerLink="/forgot">Forgot password?</a>
+                    </div>
+  
+                    <div class="d-flex align-items-center justify-content-center pb-4">
+                      <p class="mb-0 me-2">Don't have an account?</p>
+                      <button type="button" class="btn btn-outline-danger"><a routerLink="/register">Register here</a></button>
+                    </div>
+  
+                  </form>
+  
+                </div>
+              </div>
+              <div class="col-lg-6 d-flex align-items-center gradient-custom-2">
+                <div class="text-white px-3 py-4 p-md-5 mx-md-4">
+                  <h4 class="mb-4">Welcome to the Twitter App</h4>
+                  <p class="small mb-0">Twitter is a free social networking site where users broadcast short posts known as tweets. These tweets can contain text, videos, photos or links. To access Twitter, users need an internet connection or smart phone to use the app or website, Twitter.com.
+                    It is a microblogging service -- a combination of blogging and instant messaging -- for registered users to post, like and reply to tweets with short messages.
+                    People use Twitter to get the latest updates and promotions from brands; communicate with friends; and follow business leaders, politicians and celebrities. They also use it to stay current on news and events. Twitter was the first source to break the news of the water landing of US Airways Flight 549 in New York City's Hudson River.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>

@@ -1,0 +1,74 @@
+body{
+    margin-top:20px;
+    background:#eee;
+}
+.profile-header {
+    position: relative;
+    overflow: hidden
+}
+
+.profile-header .profile-header-cover {
+    background-color: #00b5ec;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0
+}
+
+.profile-header .profile-header-cover:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0, rgba(0, 0, 0, .75) 100%)
+}
+
+.profile-header .profile-header-content {
+    color: #fff;
+    padding: 25px
+}
+.profile-header .profile-header-content,
+.profile-header .profile-header-tab {
+    position: relative
+}
+.profile-header .profile-header-tab {
+    background: #fff;
+    list-style-type: none;
+    margin: -10px 0 0;
+    padding: 0 0 0 140px;
+    white-space: nowrap;
+    border-radius: 0
+}
+.profile-header .profile-header-tab>li {
+    display: inline-block;
+    margin: 0
+}
+
+.profile-header .profile-header-tab>li>a {
+    display: block;
+    color: #929ba1;
+    line-height: 20px;
+    padding: 10px 20px;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 12px;
+    border: none
+}
+.profile-header .profile-header-tab>li.active>a,
+.profile-header .profile-header-tab>li>a.active {
+    color: #242a30
+}
+select.form-control:not([size]):not([multiple]) {
+    height: 34px;
+}
+.form-control.input-inline {
+    display: inline;
+    width: auto;
+    padding: 0 7px;
+}

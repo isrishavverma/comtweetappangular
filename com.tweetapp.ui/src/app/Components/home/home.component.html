@@ -1,0 +1,96 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand" routerLink="/home">
+        <img src="https://techmoran.com/wp-content/uploads/2021/02/Twitter.jpg"
+          style="width: 85px;" alt="logo">
+    </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item active">
+          <a class="nav-link" routerLink="/home">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/seachUser">Search</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/post">Post</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/profile">Profile</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link alert-danger" (click)="logOut()">Log Out</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+  <div class="row">
+    <div class="col-md-12">
+      <div id="content" class="content content-full-width">
+  <div class="profile">
+    <div class="profile-header">
+       <!-- BEGIN profile-header-cover -->
+       <div class="profile-header-cover"></div>
+       <!-- END profile-header-cover -->
+       <!-- BEGIN profile-header-content -->
+       <div class="profile-header-content">
+          <!-- BEGIN profile-header-img -->
+          <!-- END profile-header-img -->
+          <!-- BEGIN profile-header-info -->
+          <div class="profile-header-info">
+             <h4 class="m-t-10 m-b-5">{{this.userName}}</h4>
+             <p class="m-b-10">{{this.email}}</p>
+          </div>
+          <!-- END profile-header-info -->
+       </div>
+       <!-- END profile-header-content -->
+    </div>
+  </div>
+ </div>
+</div>
+  </div>
+  <section class="h-100 gradient-form" style="background-color: #eee;">
+      <div class="container py-5 h-100">
+        <div class="row d-flex justify-content-center align-items-center h-100">
+          <div class="col-xl-10">
+            <div class="card rounded-3 text-black">
+              <div class="row">
+              
+                <div class="col-lg-6 align-items-center homepage">
+                  <div class="px-3 py-4 p-md-5 mx-md-4">
+
+                    <div class="panel-body" *ngFor="let tweet of tweets; index as i;">
+                      <div class="fb-user-details">
+                          <h3>{{map.get(tweet.userEmail)}}</h3>
+                          <p>{{tweet.tweetTime}}</p>
+                      </div>
+                      <p class="fb-user-status">
+                        {{tweet.tweetMessage}}
+                      </p>
+                      <div class="fb-status-container fb-border">
+                          <div class="fb-time-action">
+                              <a (click)="onLike(tweet.id)" title="See Likes">Likes </a>
+                              <a (click)="onReply(tweet.id)" title="Leave a comment">Comments</a>
+                              <!-- <p class="text-primary">Liked by:</p>
+                              <div *ngFor="let liked of likedBy; index as i;">
+                                <p>{{liked.name}}</p>
+                              </div> -->
+                          </div>
+                      </div>
+                      <hr>
+                      
+                  </div>
+
+                  </div>
+                </div>
+                
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">

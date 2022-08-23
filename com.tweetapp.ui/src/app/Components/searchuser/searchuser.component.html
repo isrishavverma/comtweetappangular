@@ -1,0 +1,131 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand" routerLink="/home">
+        <img src="https://techmoran.com/wp-content/uploads/2021/02/Twitter.jpg"
+          style="width: 85px;" alt="logo">
+    </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/home">Home</a>
+        </li>
+        <li class="nav-item active">
+          <a class="nav-link" routerLink="/seachUser">Search</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/post">Post</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/profile">Profile</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link alert-danger" (click)="logOut()">Log Out</a>
+        </li>
+      </ul>
+    </div>
+  </nav>    
+
+  <div class="container">
+    <div class="row">
+       <div class="col-md-12">
+          <div id="content" class="content content-full-width">
+             <!-- begin profile -->
+             <div class="profile">
+                <div class="profile-header">
+                   <!-- BEGIN profile-header-cover -->
+                   <div class="profile-header-cover"></div>
+                   <!-- END profile-header-cover -->
+                   <!-- BEGIN profile-header-content -->
+                   <div class="profile-header-content">
+                      <!-- BEGIN profile-header-img -->
+                      <!-- END profile-header-img -->
+                      <!-- BEGIN profile-header-info -->
+                      <div class="profile-header-info">
+                         <h4 class="m-t-10 m-b-5">{{this.userName}}</h4>
+                         <p class="m-b-10">{{this.email}}</p>
+                      </div>
+                      <!-- END profile-header-info -->
+                   </div>
+                   <!-- END profile-header-content -->
+                </div>
+             </div>
+             <div class="panel profile-info">
+                <form (submit)="searchUser()" [formGroup]="searchForm">
+                    <input type="text" name="searchUserEmail" formControlName="searchUserEmail" class="form-control input-lg p-text-area" rows="2" placeholder="Enter an emailid to search"/>
+                    <div *ngIf="showError"><p class="alert alert-danger">Please enter at least 10 chars</p></div>
+                    <button type="submit" class="btn btn-info pull-right">Search</button>
+                </form>
+              </div>
+              <div class="profile-content" *ngIf="success && notFound">
+                  <h3 class="text-danger">Sorry! No such user found</h3>
+              </div>
+              <div class="profile-content" *ngIf="success && !notFound">
+                <!-- begin tab-content -->
+                <div class="tab-content p-0">
+ 
+                   <!-- begin #profile-about tab -->
+                   <div class="tab-pane fade in active show" id="profile-about">
+                      <!-- begin table -->
+                      <div class="table-responsive">
+                         <table class="table table-profile">
+                            <thead>
+                               <tr>
+                                  <th></th>
+                               </tr>
+                            </thead>
+                            <tbody>
+ 
+                               <tr>
+                                  <td class="field highlight">Name</td>
+                                  <td><i class="fa fa-user fa-lg m-r-5"></i>{{user.name}}</td>
+                               </tr>
+                               <tr class="divider">
+                                  <td colspan="2"></td>
+                               </tr>
+                               <tr class="highlight">
+                                  <td class="field">Email</td>
+                                  <td>{{user.email}}</td>
+                               </tr>
+                               <tr class="divider">
+                                  <td colspan="2"></td>
+                               </tr>
+                               <tr>
+                                  <td class="field">City</td>
+                                  <td>Kolkata</td>
+                               </tr>
+                               <tr>
+                                  <td class="field">Gender</td>
+                                  <td>
+                                     {{user.gender}}
+                                  </td>
+                               </tr>
+                               <tr>
+                                  <td class="field">Birthdate</td>
+                                  <td>
+                                     {{this.dob.getDate()}}
+                                     -
+                                     {{this.dob.getUTCMonth()+1}}
+                                     -
+                                     {{this.dob.getUTCFullYear()}}
+                                  </td>
+                               </tr>
+                               <tr class="divider">
+                                  <td colspan="2"></td>
+                               </tr>
+                               <tr class="highlight">
+                                  <td class="field">&nbsp;</td>
+                                  <td class="p-t-10 p-b-10">
+                                     <button (click)="goHome()" type="button" class="btn btn-primary width-150">Home</button>
+                                  </td>
+                               </tr>
+                            </tbody>
+                         </table>
+                      </div>
+                      <!-- end table -->
+                   </div>
+            </div>
+        </div>
+    </div>
+</div>

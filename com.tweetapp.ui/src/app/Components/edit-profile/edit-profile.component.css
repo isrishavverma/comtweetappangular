@@ -1,0 +1,109 @@
+body{
+    margin-top:20px;
+    background:#eee;
+}
+.profile-header {
+    position: relative;
+    overflow: hidden
+}
+.profile-header .profile-header-cover {
+    background-color: #00b5ec;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0
+}
+.profile-header .profile-header-cover:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0, rgba(0, 0, 0, .75) 100%)
+}
+.profile-header .profile-header-content {
+    color: #fff;
+    padding: 25px
+}
+.profile-header-img {
+    float: left;
+    width: 120px;
+    height: 120px;
+    overflow: hidden;
+    position: relative;
+    z-index: 10;
+    margin: 0 0 -20px;
+    padding: 3px;
+    border-radius: 4px;
+    background: #fff
+}
+.profile-header-info h4 {
+    font-weight: 500;
+    color: #fff
+}
+.text-ellipsis,
+.text-nowrap {
+    white-space: nowrap!important
+}
+.profile-content {
+    padding: 25px;
+    border-radius: 4px
+}
+.profile-content:after,
+.profile-content:before {
+    content: '';
+    display: table;
+    clear: both
+}
+.profile-content .tab-content,
+.profile-content .tab-pane {
+    background: 0 0
+}
+.table.table-profile>thead>tr>th {
+    border-bottom: none!important
+}
+.table.table-profile>thead>tr>th h4 {
+    font-size: 20px;
+    margin-top: 0
+}
+.table.table-profile>thead>tr>th h4 small {
+    display: block;
+    font-size: 12px;
+    font-weight: 400;
+    margin-top: 5px
+}
+.table.table-profile>tbody>tr>td,
+.table.table-profile>thead>tr>th {
+    border: none;
+    padding-top: 7px;
+    padding-bottom: 7px;
+    color: #242a30;
+    background: 0 0
+}
+.table.table-profile>tbody>tr>td.field {
+    width: 20%;
+    text-align: right;
+    font-weight: 600;
+    color: #2d353c
+}
+.table.table-profile>tbody>tr.highlight>td {
+    border-top: 1px solid #b9c3ca;
+    border-bottom: 1px solid #b9c3ca
+}
+.table.table-profile>tbody>tr.divider>td {
+    padding: 0!important;
+    height: 10px
+}
+select.form-control:not([size]):not([multiple]) {
+    height: 34px;
+}
+.form-control.input-inline {
+    display: inline;
+    width: auto;
+    padding: 0 7px;
+}

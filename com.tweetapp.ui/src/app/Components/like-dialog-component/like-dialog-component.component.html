@@ -1,0 +1,19 @@
+<h2 mat-dialog-title>Liked By:</h2>
+
+<mat-dialog-content>
+  
+   <mat-dialog-content>
+       <ul *ngFor="let user of description">
+            <li>{{user.name}}</li>
+       </ul>
+   </mat-dialog-content>
+   <div >
+    <p class="form-label text-primary">Like this post</p>
+    <button class="fa fa-thumbs-up fa-lg m-r-5" name="likeTweet" (click)="toggleLike=true;"></button>
+    </div>
+</mat-dialog-content>
+
+<mat-dialog-actions>
+    <button class="mat-raised-button"(click)="close()">Close</button>
+    <!-- <button class="mat-raised-button mat-primary"(click)="save()">Save</button> -->
+</mat-dialog-actions>
